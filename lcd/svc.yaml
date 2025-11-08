@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lcd-service
+spec:
+  type: NodePort          # Exposes the service on a node port
+  selector:
+    app: lcd             # This must match the pod label
+  ports:
+    - protocol: TCP
+      port: 8082         # Port the service exposes inside the cluster
+      targetPort: 8082   # Port your application listens on in the pod
+      nodePort: 31082    # NodePort on which you can access externally (optional, else auto-ass
