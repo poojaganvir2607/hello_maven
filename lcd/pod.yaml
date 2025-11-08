@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lcd
+  labels:
+    app: lcd
+spec:
+  containers:
+    - name: lcd-container
+      image: 747409585857.dkr.ecr.us-east-1.amazonaws.com/lcd:1.1     
+      ports:
+        - containerPort: 8082
+      imagePullPolicy: IfNotPresent
