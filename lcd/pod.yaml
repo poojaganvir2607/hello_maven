@@ -11,3 +11,5 @@ spec:
       ports:
         - containerPort: 8082
       imagePullPolicy: IfNotPresent
+  imagePullSecrets:
+    - name: ecr-reg
